@@ -21,6 +21,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -36,9 +37,35 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/auth-next',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+        postcss: {
+          postcssOptions: {
+            plugins: {
+              tailwindcss: {},
+              autoprefixer: {},
+            },
+          },
+        },
+      },
+
+
+axios: {
+  credentials: true,
+},
+
+auth: {
+  strategies: {
+    laravelSanctum: {
+      provider: 'laravel/sanctum',
+      url: 'http://localhost:8000/',
+    },
+  },
+},
+
+  
 }

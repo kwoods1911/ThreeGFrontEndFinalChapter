@@ -1,5 +1,6 @@
 <template>
 <div>
+  <NavBar/>
     <h1>Registration</h1>
     <form action=""  method="POST" @submit="createAccount">
         <label for="FullName">Name:</label>

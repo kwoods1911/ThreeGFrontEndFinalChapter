@@ -1,10 +1,7 @@
 <template>
     <div>
-        <RegrigrationPage/>
-
-        
+        <h1 class="text-9xl">THREE G SHIPPING</h1>
     </div>
-    
   </template>
   
   <script>
