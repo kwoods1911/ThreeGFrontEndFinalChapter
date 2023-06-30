@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="container mx-auto px-4">
     <NavBar/>
     <App/>
-    <!-- <p>Hi {{ user.name }}</p> -->
-    <a href="#" @click.prevent="logout">Logout</a>
+    <p v-if="user">Hi {{ user.name }}</p>
   </div>
 </template>
 
@@ -13,7 +12,8 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      user: '',
+      user: this.$auth.user,
+
     }
   },
   beforeCreate(){
@@ -24,9 +24,7 @@ export default {
   },
   methods: {
     async logout() {
-      
       await this.$auth.logout()
-
       this.$router.push('/login')
     },
   },

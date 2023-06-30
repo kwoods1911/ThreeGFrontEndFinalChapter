@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1 class="text-9xl">THREE G SHIPPING</h1>
+    <div class="grid justify-items-stretch">
+        <h1 class="justify-self-center text-9xl">THREE G SHIPPING</h1>
     </div>
   </template>
   

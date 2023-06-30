@@ -32,26 +32,34 @@ export default {
 
    
       
-      axios.get('http://localhost:8000/sanctum/csrf-cookie',{ withCredentials: true }).then(response => {
+      // axios.get('http://localhost:8000/sanctum/csrf-cookie',{ withCredentials: true }).then(response => {
         
-        return axios.post('http://localhost:8000/api/login',{
+      //   return axios.post('http://localhost:8000/api/login',{
+      //     email: email.value,
+      //     password: password.value
+      //   },{ withCredentials: true })
+      //   }).then(response =>{
+      //     if(response.status == 200){
+      //       this.$router.push('/');
+      //       console.log(this.$auth);
+      //     }
+      //   })
+      //   .catch(function (error) {
+      //    console.log(error);
+      // });
+
+      await this.$auth.loginWith('laravelSanctum', {
+        data: {
           email: email.value,
-          password: password.value
-        },{ withCredentials: true })
-        }).then(response =>{
+          password: password.value,
+        },
+      })
 
-          if(response.status == 200){
-            this.$router.push('/');
-            console.log(this.$auth);
-
-          }
-        })
-        .catch(function (error) {
-         console.log(error);
-      });
+     this.$router.push('/')
+    },
     },
 
     
-  },
+  
 }
 </script>
